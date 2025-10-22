@@ -1,0 +1,24 @@
+{
+  "name": "instagram-poster-templates",
+  "version": "1.0.0",
+  "description": "HTML ve CSS ile Instagram poster şablonları - Canva tarzı tasarımlar",
+  "main": "index.html",
+  "scripts": {
+    "start": "node server.js",
+    "serve": "python3 -m http.server 8000",
+    "dev": "bun run server-bun.js",
+    "python": "python3 -m http.server 8000",
+    "node": "node server.js",
+    "bun": "bun run server-bun.js"
+  },
+  "keywords": [
+    "instagram",
+    "poster",
+    "template",
+    "html",
+    "css",
+    "design"
+  ],
+  "author": "",
+  "license": "MIT"
+}

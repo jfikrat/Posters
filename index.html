@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Poster Templates</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Top Controls -->
+        <div class="top-controls">
+            <div class="controls-left">
+                <select id="versionDropdown" class="version-dropdown">
+                    <option value="v1">Version 1.0</option>
+                    <option value="v2">Version 2.0</option>
+                    <option value="v3">Version 3.0</option>
+                </select>
+            </div>
+            <div class="controls-right">
+                <button onclick="saveCurrentView()" class="save-btn">
+                    <span class="btn-icon">💾</span>
+                    PNG Kaydet
+                </button>
+            </div>
+        </div>
+
+        <header>
+            <h1>Instagram Poster Templates</h1>
+            <p>Canva tarzı profesyonel Instagram paylaşım şablonları</p>
+        </header>
+
+        <div class="templates-grid">
+            <a href="examples/kant-parka-v1.html" class="template-card">
+                <div class="template-preview" style="background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);">
+                    <h3>🧥 Kant Parka</h3>
+                    <p>Delta Plus - İş Güvenliği</p>
+                </div>
+            </a>
+            <a href="examples/template1.html" class="template-card">
+                <div class="template-preview">
+                    <h3>Template 1</h3>
+                    <p>Modern & Minimal</p>
+                </div>
+            </a>
+            <a href="examples/template2.html" class="template-card">
+                <div class="template-preview">
+                    <h3>Template 2</h3>
+                    <p>Colorful & Bold</p>
+                </div>
+            </a>
+            <a href="examples/template3.html" class="template-card">
+                <div class="template-preview">
+                    <h3>Template 3</h3>
+                    <p>Elegant & Professional</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

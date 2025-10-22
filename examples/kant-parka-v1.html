@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kant İş Güvenliği - Delta Plus Parka</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/poster.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .kant-poster {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #ff8c42 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .kant-poster::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .product-image-container {
+            position: absolute;
+            right: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 600px;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 40px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .content-left {
+            position: relative;
+            z-index: 10;
+            padding: 80px 60px;
+            max-width: 600px;
+        }
+
+        .logo {
+            width: 280px;
+            margin-bottom: 40px;
+            filter: brightness(0) invert(1) drop-shadow(0 2px 8px rgba(255,255,255,0.4));
+        }
+
+        .main-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: white;
+            line-height: 1.05;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            letter-spacing: -0.3px;
+        }
+
+        .subtitle {
+            font-size: 1.8rem;
+            line-height: 1.35;
+            color: rgba(255,255,255,0.96);
+            margin-bottom: 28px;
+            font-weight: 500;
+        }
+
+        .features {
+            background: rgba(255,255,255,0.26);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 22px;
+            margin-bottom: 26px;
+            border: 2px solid rgba(255,255,255,0.32);
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .feature-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-icon {
+            width: 1.6rem;
+            height: 1.6rem;
+            margin-right: 10px;
+            stroke-width: 2.5px;
+        }
+
+        .price-section {
+            display: flex;
+            align-items: baseline;
+            gap: 14px;
+            margin-bottom: 22px;
+        }
+
+        .price-old {
+            font-size: 1.6rem;
+            color: rgba(255,255,255,0.70);
+            text-decoration: line-through;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.15);
+        }
+
+        .price-new {
+            font-size: 3.4rem;
+            font-weight: 900;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.28);
+        }
+
+        .discount-badge {
+            margin-left: auto;
+            align-self: center;
+            background: #dc2626;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 999px;
+            font-size: 2rem;
+            font-weight: 900;
+            box-shadow: 0 6px 16px rgba(220, 38, 38, 0.5);
+        }
+
+        .website-info {
+            margin-top: 8px;
+        }
+
+        .website-cta {
+            color: rgba(255,255,255,0.95);
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .website-url {
+            color: white;
+            font-size: 2.2rem;
+            font-weight: 800;
+            text-transform: lowercase;
+            letter-spacing: -0.5px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.25);
+        }
+
+        .decorative-circle {
+            position: absolute;
+            border-radius: 50%;
+            border: 3px solid rgba(255,255,255,0.12);
+        }
+
+        .circle-1 {
+            width: 300px;
+            height: 300px;
+            top: -100px;
+            left: -100px;
+        }
+
+        .circle-2 {
+            width: 200px;
+            height: 200px;
+            bottom: 100px;
+            left: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="poster-container">
+        <div class="instagram-post kant-poster">
+            <!-- Dekoratif çemberler -->
+            <div class="decorative-circle circle-1"></div>
+            <div class="decorative-circle circle-2"></div>
+
+            <!-- Ürün görseli -->
+            <div class="product-image-container">
+                <img src="../assets/images/parka-turuncu.png" alt="Delta Plus Parka" class="product-image"
+                     onerror="this.style.display='none'">
+            </div>
+
+            <!-- İçerik -->
+            <div class="content-left">
+                <img src="../assets/images/kant-logo.png" alt="Kant İş Güvenliği" class="logo">
+
+                <h1 class="main-title">DELTA PLUS<br>PARKA</h1>
+                <p class="subtitle">600D Oxford • EN ISO 20471</p>
+
+                <div class="features">
+                    <div class="feature-item">
+                        <i data-lucide="droplets" class="feature-icon"></i>
+                        <span>Su Geçirmez</span>
+                    </div>
+                    <div class="feature-item">
+                        <i data-lucide="zap" class="feature-icon"></i>
+                        <span>Reflektörlü</span>
+                    </div>
+                    <div class="feature-item">
+                        <i data-lucide="layers" class="feature-icon"></i>
+                        <span>Çıkarılabilir İç Mont</span>
+                    </div>
+                </div>
+
+                <div class="price-section">
+                    <span class="price-old">4.985 TL</span>
+                    <span class="price-new">3.502 TL</span>
+                    <span class="discount-badge">%30</span>
+                </div>
+
+                <div class="website-info">
+                    <div class="website-cta">Detaylı Bilgi ve Sipariş:</div>
+                    <div class="website-url">kantisguvenligi.com</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button onclick="downloadPosterPNG()" class="download-btn">Download PNG</button>
+        <button onclick="downloadPosterJPEG()" class="download-btn">Download JPEG</button>
+        <button onclick="copyPosterToClipboard()" class="download-btn">Copy to Clipboard</button>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/download.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
