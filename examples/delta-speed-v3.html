@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delta Plus SPEED Parka - Minimal Stil</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/poster.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .speed-poster-v3 {
+            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Orange accent stripe */
+        .accent-stripe {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 12px;
+            background: linear-gradient(180deg, #FF6B35 0%, #F7931E 100%);
+        }
+
+        /* Content wrapper */
+        .content-wrapper {
+            position: relative;
+            padding: 60px 70px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        /* Header */
+        .header-minimal {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 40px;
+        }
+
+        .logo-minimal {
+            width: 200px;
+            filter: brightness(0);
+        }
+
+        .discount-minimal {
+            background: #dc2626;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 999px;
+            font-size: 2rem;
+            font-weight: 900;
+            box-shadow: 0 6px 20px rgba(220,38,38,0.3);
+        }
+
+        /* Title section */
+        .title-section {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .title-minimal {
+            font-size: 3.8rem;
+            font-weight: 900;
+            color: #1a1a1a;
+            line-height: 1.1;
+            margin-bottom: 12px;
+        }
+
+        .subtitle-minimal {
+            font-size: 1.6rem;
+            color: #6b7280;
+            font-weight: 500;
+        }
+
+        .highlight-orange {
+            color: #FF6B35;
+        }
+
+        /* Main content grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        /* Product image area */
+        .product-area {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f1f3f4 0%, #e5e7eb 100%);
+            border-radius: 30px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+
+        .product-minimal {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Features grid */
+        .features-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .feature-card-minimal {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card-minimal:hover {
+            border-color: #FF6B35;
+            box-shadow: 0 8px 24px rgba(255,107,53,0.15);
+        }
+
+        .feature-icon-card {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .feature-icon-card i {
+            width: 26px;
+            height: 26px;
+            color: white;
+            stroke-width: 2.5px;
+        }
+
+        .feature-text {
+            flex: 1;
+        }
+
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+
+        .feature-desc {
+            font-size: 0.95rem;
+            color: #6b7280;
+        }
+
+        /* Bottom info */
+        .bottom-info {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 30px;
+            border-top: 3px solid #e5e7eb;
+        }
+
+        .price-section-minimal {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .price-label-minimal {
+            font-size: 1rem;
+            color: #6b7280;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .price-display {
+            display: flex;
+            align-items: baseline;
+            gap: 14px;
+        }
+
+        .price-old-minimal {
+            font-size: 1.5rem;
+            color: #9ca3af;
+            text-decoration: line-through;
+        }
+
+        .price-new-minimal {
+            font-size: 3.6rem;
+            font-weight: 900;
+            color: #FF6B35;
+        }
+
+        .website-section-minimal {
+            text-align: right;
+        }
+
+        .website-label-minimal {
+            font-size: 1rem;
+            color: #6b7280;
+            margin-bottom: 8px;
+        }
+
+        .website-url-minimal {
+            font-size: 2.1rem;
+            font-weight: 800;
+            color: #1a1a1a;
+        }
+    </style>
+</head>
+<body>
+    <div class="poster-container">
+        <div class="instagram-post speed-poster-v3">
+            <!-- Accent stripe -->
+            <div class="accent-stripe"></div>
+
+            <!-- Content wrapper -->
+            <div class="content-wrapper">
+                <!-- Header -->
+                <div class="header-minimal">
+                    <img src="../assets/images/kant-logo.png" alt="Kant İş Güvenliği" class="logo-minimal">
+                    <div class="discount-minimal">-30%</div>
+                </div>
+
+                <!-- Title section -->
+                <div class="title-section">
+                    <h1 class="title-minimal">DELTA PLUS SPEED</h1>
+                    <p class="subtitle-minimal">
+                        <span class="highlight-orange">5+1 Sistem</span> ile Her Mevsim Koruma
+                    </p>
+                </div>
+
+                <!-- Main grid -->
+                <div class="content-grid">
+                    <!-- Product -->
+                    <div class="product-area">
+                        <img src="../assets/products/parka-turuncu.png" alt="Delta Plus SPEED" class="product-minimal"
+                             onerror="this.style.display='none'">
+                    </div>
+
+                    <!-- Features -->
+                    <div class="features-grid">
+                        <div class="feature-card-minimal">
+                            <div class="feature-icon-card">
+                                <i data-lucide="layers"></i>
+                            </div>
+                            <div class="feature-text">
+                                <div class="feature-title">5+1 Çok Yönlü</div>
+                                <div class="feature-desc">Çıkarılabilir kol & ceket</div>
+                            </div>
+                        </div>
+
+                        <div class="feature-card-minimal">
+                            <div class="feature-icon-card">
+                                <i data-lucide="droplets"></i>
+                            </div>
+                            <div class="feature-text">
+                                <div class="feature-title">Su Geçirmez</div>
+                                <div class="feature-desc">Mühürlü dikişler</div>
+                            </div>
+                        </div>
+
+                        <div class="feature-card-minimal">
+                            <div class="feature-icon-card">
+                                <i data-lucide="zap"></i>
+                            </div>
+                            <div class="feature-text">
+                                <div class="feature-title">Reflektif</div>
+                                <div class="feature-desc">Gece görünürlüğü</div>
+                            </div>
+                        </div>
+
+                        <div class="feature-card-minimal">
+                            <div class="feature-icon-card">
+                                <i data-lucide="shield-check"></i>
+                            </div>
+                            <div class="feature-text">
+                                <div class="feature-title">Oxford Kumaş</div>
+                                <div class="feature-desc">%100 PU kaplamalı</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom info -->
+                <div class="bottom-info">
+                    <div class="price-section-minimal">
+                        <div class="price-label-minimal">Özel Fiyat</div>
+                        <div class="price-display">
+                            <span class="price-old-minimal">4.985 TL</span>
+                            <span class="price-new-minimal">3.501 TL</span>
+                        </div>
+                    </div>
+
+                    <div class="website-section-minimal">
+                        <div class="website-label-minimal">Detaylı bilgi:</div>
+                        <div class="website-url-minimal">kantisguvenligi.com</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button onclick="downloadPosterPNG()" class="download-btn">Download PNG</button>
+        <button onclick="downloadPosterJPEG()" class="download-btn">Download JPEG</button>
+        <button onclick="copyPosterToClipboard()" class="download-btn">Copy to Clipboard</button>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/download.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

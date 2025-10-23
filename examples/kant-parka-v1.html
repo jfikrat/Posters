@@ -33,30 +33,31 @@
 
         .product-image-container {
             position: absolute;
-            right: -40px;
+            right: -80px;
             top: 50%;
             transform: translateY(-50%);
-            width: 600px;
-            height: 600px;
+            width: 680px;
+            height: 680px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            border-radius: 40px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+            border-radius: 48px;
+            box-shadow: 0 28px 60px rgba(0,0,0,0.45);
         }
 
         .product-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transform: scale(1.06);
         }
 
         .content-left {
             position: relative;
             z-index: 10;
-            padding: 80px 60px;
-            max-width: 600px;
+            padding: 100px 70px 90px;
+            max-width: 620px;
         }
 
         .logo {
@@ -78,27 +79,33 @@
         .subtitle {
             font-size: 1.8rem;
             line-height: 1.35;
-            color: rgba(255,255,255,0.96);
-            margin-bottom: 28px;
-            font-weight: 500;
+            color: rgba(255,255,255,0.92);
+            margin-bottom: 32px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
         }
 
         .features {
-            background: rgba(255,255,255,0.26);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 22px;
-            margin-bottom: 26px;
-            border: 2px solid rgba(255,255,255,0.32);
+            position: relative;
+            background: linear-gradient(140deg, rgba(255,186,122,0.42) 0%, rgba(255,255,255,0.16) 100%);
+            backdrop-filter: blur(18px);
+            border-radius: 28px 140px 140px 28px;
+            padding: 32px 48px 32px 30px;
+            margin-bottom: 34px;
+            border: 1px solid rgba(255,255,255,0.28);
+            box-shadow: 0 30px 70px rgba(0,0,0,0.18);
+            max-width: 480px;
         }
 
         .feature-item {
             display: flex;
             align-items: center;
-            color: white;
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            font-weight: 500;
+            gap: 18px;
+            color: rgba(255,255,255,0.95);
+            font-size: 1.35rem;
+            margin-bottom: 16px;
+            font-weight: 600;
+            letter-spacing: 0.015em;
         }
 
         .feature-item:last-child {
@@ -106,17 +113,31 @@
         }
 
         .feature-icon {
-            width: 1.6rem;
-            height: 1.6rem;
-            margin-right: 10px;
-            stroke-width: 2.5px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 16px;
+            background: rgba(255,255,255,0.22);
+            box-shadow: 0 16px 30px rgba(0,0,0,0.2);
+        }
+
+        .feature-icon svg,
+        .feature-icon i {
+            display: block;
+            width: 22px;
+            height: 22px;
+            stroke: #fff3e6;
+            stroke-width: 2.4px;
+            fill: none;
         }
 
         .price-section {
             display: flex;
             align-items: baseline;
-            gap: 14px;
-            margin-bottom: 22px;
+            gap: 18px;
+            margin-bottom: 28px;
         }
 
         .price-old {
@@ -127,7 +148,7 @@
         }
 
         .price-new {
-            font-size: 3.4rem;
+            font-size: 3.6rem;
             font-weight: 900;
             color: white;
             text-shadow: 2px 2px 8px rgba(0,0,0,0.28);
@@ -138,11 +159,11 @@
             align-self: center;
             background: #dc2626;
             color: white;
-            padding: 14px 28px;
+            padding: 10px 22px;
             border-radius: 999px;
-            font-size: 2rem;
-            font-weight: 900;
-            box-shadow: 0 6px 16px rgba(220, 38, 38, 0.5);
+            font-size: 1.3rem;
+            font-weight: 800;
+            box-shadow: 0 16px 28px rgba(220, 38, 38, 0.45);
         }
 
         .website-info {
@@ -154,14 +175,16 @@
             font-size: 1.2rem;
             font-weight: 500;
             margin-bottom: 8px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
 
         .website-url {
             color: white;
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             font-weight: 800;
             text-transform: lowercase;
-            letter-spacing: -0.5px;
+            letter-spacing: -0.3px;
             text-shadow: 2px 2px 8px rgba(0,0,0,0.25);
         }
 
@@ -208,15 +231,15 @@
 
                 <div class="features">
                     <div class="feature-item">
-                        <i data-lucide="droplets" class="feature-icon"></i>
+                        <span class="feature-icon"><i data-lucide="droplets"></i></span>
                         <span>Su Geçirmez</span>
                     </div>
                     <div class="feature-item">
-                        <i data-lucide="zap" class="feature-icon"></i>
+                        <span class="feature-icon"><i data-lucide="zap"></i></span>
                         <span>Reflektörlü</span>
                     </div>
                     <div class="feature-item">
-                        <i data-lucide="layers" class="feature-icon"></i>
+                        <span class="feature-icon"><i data-lucide="layers"></i></span>
                         <span>Çıkarılabilir İç Mont</span>
                     </div>
                 </div>
@@ -241,11 +264,15 @@
         <button onclick="copyPosterToClipboard()" class="download-btn">Copy to Clipboard</button>
     </div>
 
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script src="../js/main.js"></script>
     <script src="../js/download.js"></script>
     <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
+        if (window.lucide) {
+            window.lucide.createIcons();
+        } else {
+            console.warn('Lucide ikon kütüphanesi yüklenemedi.');
+        }
     </script>
 </body>
 </html>

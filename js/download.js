@@ -21,8 +21,9 @@ async function createCanvas() {
 
     try {
         // Posteri geçici olarak tam boyuta zorla (responsive breakpoint'leri atla)
+        // Instagram Story format: 1080x1920px (9:16)
         poster.style.width = '1080px';
-        poster.style.height = '1080px';
+        poster.style.height = '1920px';
 
         // SVG ve font yüklenmesi için kısa bekleme
         await new Promise(resolve => setTimeout(resolve, 200));

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delta Plus SPEED Parka - Fotografik Stil</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/poster.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .speed-poster-v2 {
+            background: #0f1419;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Gradient overlay */
+        .gradient-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #FF6B35 0%, transparent 50%, #2c3e50 100%);
+            opacity: 0.4;
+            z-index: 1;
+        }
+
+        /* Ürün fotoğrafı (yağmur sahnesi) */
+        .hero-image {
+            position: absolute;
+            right: -150px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 750px;
+            height: 750px;
+            object-fit: cover;
+            border-radius: 40px;
+            filter: brightness(1.1) contrast(1.1);
+            z-index: 2;
+        }
+
+        /* Sol kolon */
+        .content-column {
+            position: relative;
+            z-index: 10;
+            padding: 70px 60px;
+            max-width: 580px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .logo-photo {
+            width: 240px;
+            margin-bottom: 40px;
+            filter: brightness(0) invert(1) drop-shadow(0 2px 8px rgba(255,255,255,0.3));
+        }
+
+        .title-photo {
+            font-size: 4rem;
+            font-weight: 900;
+            color: white;
+            line-height: 1;
+            margin-bottom: 12px;
+            text-shadow: 2px 2px 16px rgba(0,0,0,0.5);
+        }
+
+        .subtitle-photo {
+            font-size: 2rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 50px;
+            line-height: 1.3;
+        }
+
+        /* Features list */
+        .features-list {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .feature-row {
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: 1.35rem;
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+
+        .feature-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-icon-list {
+            width: 24px;
+            height: 24px;
+            margin-right: 12px;
+            color: #FF6B35;
+            stroke-width: 2.5px;
+        }
+
+        /* Price badge */
+        .price-badge {
+            background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+            border-radius: 20px;
+            padding: 24px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 12px 40px rgba(255,107,53,0.4);
+            margin-bottom: 30px;
+        }
+
+        .price-group {
+            display: flex;
+            align-items: baseline;
+            gap: 14px;
+        }
+
+        .old-price-photo {
+            font-size: 1.6rem;
+            color: rgba(255,255,255,0.65);
+            text-decoration: line-through;
+        }
+
+        .new-price-photo {
+            font-size: 3.4rem;
+            font-weight: 900;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .discount-tag {
+            background: #dc2626;
+            color: white;
+            padding: 10px 22px;
+            border-radius: 999px;
+            font-size: 1.8rem;
+            font-weight: 900;
+            box-shadow: 0 4px 12px rgba(220,38,38,0.4);
+        }
+
+        /* Website info */
+        .web-info {
+            margin-top: auto;
+        }
+
+        .web-label {
+            color: rgba(255,255,255,0.85);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .web-url {
+            color: white;
+            font-size: 2.3rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="poster-container">
+        <div class="instagram-post speed-poster-v2">
+            <!-- Gradient overlay -->
+            <div class="gradient-overlay"></div>
+
+            <!-- Hero image -->
+            <img src="../assets/products/parka-turuncu.png" alt="Delta Plus SPEED Parka" class="hero-image"
+                 onerror="this.style.display='none'">
+
+            <!-- Content column -->
+            <div class="content-column">
+                <img src="../assets/images/kant-logo.png" alt="Kant İş Güvenliği" class="logo-photo">
+
+                <h1 class="title-photo">DELTA PLUS<br>SPEED PARKA</h1>
+                <p class="subtitle-photo">Oxford Kumaş • 5+1 Sistem<br>Her Koşulda Koruma</p>
+
+                <div class="features-list">
+                    <div class="feature-row">
+                        <i data-lucide="droplets" class="feature-icon-list"></i>
+                        <span>Su Geçirmez & Mühürlü Dikişler</span>
+                    </div>
+                    <div class="feature-row">
+                        <i data-lucide="layers" class="feature-icon-list"></i>
+                        <span>Çıkarılabilir İç Ceket & Kollar</span>
+                    </div>
+                    <div class="feature-row">
+                        <i data-lucide="zap" class="feature-icon-list"></i>
+                        <span>Reflektif Detaylar</span>
+                    </div>
+                    <div class="feature-row">
+                        <i data-lucide="shield-check" class="feature-icon-list"></i>
+                        <span>%100 PU Kaplamalı Oxford</span>
+                    </div>
+                </div>
+
+                <div class="price-badge">
+                    <div class="price-group">
+                        <span class="old-price-photo">4.985 TL</span>
+                        <span class="new-price-photo">3.501 TL</span>
+                    </div>
+                    <div class="discount-tag">%30</div>
+                </div>
+
+                <div class="web-info">
+                    <div class="web-label">Detaylı bilgi ve sipariş:</div>
+                    <div class="web-url">kantisguvenligi.com</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button onclick="downloadPosterPNG()" class="download-btn">Download PNG</button>
+        <button onclick="downloadPosterJPEG()" class="download-btn">Download JPEG</button>
+        <button onclick="copyPosterToClipboard()" class="download-btn">Copy to Clipboard</button>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/download.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

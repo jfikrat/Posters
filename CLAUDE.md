@@ -76,9 +76,13 @@ Tüm serverlar port 8000'de çalışır. Durdurmak için: `Ctrl+C`
 ├── examples/              # Hazır örnek şablonlar
 │   ├── template1.html     # Modern & Minimal
 │   ├── template2.html     # Colorful & Bold
-│   └── template3.html     # Elegant & Professional
+│   ├── template3.html     # Elegant & Professional
+│   └── kant-parka-v1.html # Kant Parka ürün tanıtım posteri
 └── assets/
-    ├── images/            # Kullanıcı yükleyeceği fotoğraflar buraya
+    ├── references/        # **YENİ** Tasarım ilhamı için referans görseller
+    ├── logos/             # **YENİ** Marka logoları (Kant, Delta Plus, vb.)
+    ├── products/          # **YENİ** Ürün fotoğrafları
+    ├── images/            # Genel kullanım ve arka plan görselleri
     └── fonts/             # Özel fontlar (isteğe bağlı)
 ```
 
@@ -114,6 +118,41 @@ Her poster şu katman yapısını kullanır:
     </div>
 </div>
 ```
+
+### Tasarım Workflow'u (Claude İçin)
+
+**ÖNEMLI:** Yeni bir poster tasarımı yaparken aşağıdaki adımları takip et:
+
+#### 1. Referans Görselleri İncele
+```bash
+# Kullanıcı referans fotoğraflarını assets/references/ klasörüne koyacak
+# Read tool ile bu görselleri görüntüle ve tasarım stilini analiz et
+```
+
+**Nelere dikkat etmelisin:**
+- Renk paleti (gradient'ler, ana renkler)
+- Tipografi (font boyutları, ağırlıkları, hiyerarşi)
+- Layout kompozisyonu (elementlerin yerleşimi)
+- İkon ve grafik kullanımı
+- Boşluk (whitespace) kullanımı
+- Genel tasarım stili (modern, minimal, bold, vb.)
+
+#### 2. Logo ve Ürün Fotoğraflarını Kullan
+- **Logo:** `assets/logos/` klasöründen uygun logoyu seç
+- **Ürün:** `assets/products/` klasöründen ürün fotoğrafını kullan
+- Görsellerin yolunu doğru belirt: `../assets/logos/logo.png`
+
+#### 3. Tasarım İlkelerini Uygula
+- Referans görsellerden aldığın ilhamı kullan
+- Instagram standartlarına uy (1080x1080px)
+- Lucide Icons kullan (emoji yerine profesyonel SVG ikonlar)
+- Web sitesi URL'sini büyük ve belirgin yap (Instagram'da buton çalışmaz)
+- İndirim badge'lerini vurgulamaya özen göster
+
+#### 4. Test ve Export
+- Tarayıcıda önizle
+- "Download PNG" ile test et
+- PNG'nin doğru render olduğundan emin ol
 
 ### Yeni Şablon Oluşturma Workflow'u
 
@@ -172,6 +211,39 @@ Hızlı kullanım için hazır utility sınıfları (`poster.css`):
 - `.flex-center` - Flex ile ortalama
 
 ## Geliştirme Notları
+
+### Lucide Icons Kullanımı
+
+**ÖNEMLI:** Emoji yerine Lucide Icons kullan (daha profesyonel ve SVG tabanlı)
+
+1. **CDN Ekle:**
+```html
+<script src="https://unpkg.com/lucide@latest"></script>
+```
+
+2. **Icon Kullan:**
+```html
+<i data-lucide="droplets" class="feature-icon"></i>
+<i data-lucide="zap" class="feature-icon"></i>
+<i data-lucide="layers" class="feature-icon"></i>
+```
+
+3. **Initialize Et:**
+```html
+<script>
+    lucide.createIcons();
+</script>
+```
+
+4. **Popüler İkonlar:**
+- `droplets` - Su geçirmezlik
+- `zap` - Enerji, reflektör
+- `shield` - Koruma, güvenlik
+- `layers` - Katman, çok parçalı
+- `sun` - Güneş, ışık
+- `wind` - Hava geçirgenlik
+- `thermometer` - Sıcaklık
+- Tüm ikonlar: [lucide.dev/icons](https://lucide.dev/icons)
 
 ### Yeni Gradient Ekleme
 
@@ -241,6 +313,17 @@ CSS transitions/animations kullanarak:
 - Console'da hata var mı kontrol et
 - CORS hatası varsa resimleri lokal kullan
 
+### PNG indirmede içerik kesilmiş veya yanlış görünüyor
+- **Sorun:** download.js responsive breakpoint'leri bypass ediyor mu?
+- **Çözüm:** download.js'te poster geçici olarak 1080x1080'e zorlanıyor
+- Lucide icons render edilmiyor mu? `lucide.createIcons()` çağrısı var mı?
+- `scrollY` ve `scrollX` ayarları eklenmiş mi?
+
+### Lucide icons PNG'de görünmüyor
+- Download fonksiyonlarında `lucide.createIcons()` çağrısı eklenmiş mi?
+- `foreignObjectRendering: false` ayarı var mı?
+- 200ms bekleme süresi yeterli mi?
+
 ### Responsive görünüm bozuk
 - `poster.css` dosyasındaki media query'leri kontrol et
 - `viewport` meta tag'i var mı kontrol et
@@ -249,6 +332,10 @@ CSS transitions/animations kullanarak:
 - Font boyutlarını küçült
 - `.content` padding'ini ayarla
 - `line-height` değerini kontrol et
+
+### Ürün fotoğrafı yuvarlatılmış kenarlarla görünmüyor
+- Container'a `overflow: hidden` ve `border-radius` eklenmiş mi?
+- Image'a değil, container'a border-radius uygulanmalı
 
 ## İleride Eklenebilecek Özellikler
 

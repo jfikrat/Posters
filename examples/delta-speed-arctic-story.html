@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delta Plus SPEED Oxford 5+1 Parka</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/poster.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .speed-oxford-story {
+            background: linear-gradient(208deg, #ff6b2c 0%, #ff8d3a 34%, #0b1b31 84%);
+            color: #f8fbff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .speed-oxford-story::before,
+        .speed-oxford-story::after {
+            content: "";
+            position: absolute;
+            border-radius: 999px;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.16) 0%, rgba(15, 23, 42, 0) 70%);
+        }
+
+        .speed-oxford-story::before {
+            width: 620px;
+            height: 620px;
+            top: -210px;
+            right: -190px;
+        }
+
+        .speed-oxford-story::after {
+            width: 780px;
+            height: 780px;
+            bottom: -320px;
+            left: -200px;
+        }
+
+        .poster-content {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            gap: 70px;
+            height: 100%;
+            padding: 90px 90px 0;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .brand-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .brand-stack img {
+            width: 240px;
+            filter: brightness(0) invert(1);
+        }
+
+        .strapline {
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.7);
+            letter-spacing: 0.04em;
+        }
+
+        .badge-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: flex-end;
+        }
+
+        .mod-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            border-radius: 999px;
+            background: rgba(11, 27, 49, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            font-size: 1.4rem;
+            font-weight: 600;
+            letter-spacing: 0.26em;
+            text-transform: uppercase;
+        }
+
+        .mod-badge::before {
+            content: "●";
+            font-size: 1.4rem;
+            color: #ffe0c2;
+        }
+
+        .price-chip {
+            padding: 12px 24px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.22) 0%, rgba(255, 179, 102, 0.6) 100%);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0b1b31;
+            letter-spacing: 0.08em;
+            box-shadow: 0 15px 30px rgba(11, 27, 49, 0.35);
+        }
+
+        .hero-section {
+            display: grid;
+            grid-template-columns: 1.08fr 0.92fr;
+            gap: 70px;
+            align-items: stretch;
+        }
+
+        .hero-copy {
+            display: flex;
+            flex-direction: column;
+            gap: 34px;
+        }
+
+        .hero-copy h1 {
+            font-size: 5.8rem;
+            line-height: 1.04;
+            letter-spacing: -1.2px;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+
+        .hero-copy h1 span {
+            display: block;
+            font-size: 5rem;
+            letter-spacing: -0.4px;
+            text-transform: none;
+            color: #ffe3cf;
+        }
+
+        .hero-copy p {
+            font-size: 2.2rem;
+            line-height: 1.65;
+            color: rgba(255, 255, 255, 0.78);
+            max-width: 95%;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 26px;
+        }
+
+        .feature-card {
+            background: rgba(11, 27, 49, 0.52);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 26px;
+            padding: 22px 26px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            box-shadow: 0 18px 40px rgba(11, 27, 49, 0.35);
+        }
+
+        .feature-card i {
+            width: 32px;
+            height: 32px;
+            color: #ffe3cf;
+            stroke-width: 1.9px;
+        }
+
+        .feature-card-text {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .feature-card strong {
+            font-size: 1.7rem;
+            font-weight: 700;
+            display: block;
+            letter-spacing: 0.04em;
+        }
+
+        .feature-card span {
+            font-size: 1.6rem;
+            color: rgba(255, 255, 255, 0.68);
+        }
+
+        .spec-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 16px;
+        }
+
+        .spec-chip {
+            padding: 10px 20px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.12);
+            color: rgba(255, 255, 255, 0.88);
+            font-size: 1.4rem;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .product-showcase {
+            position: relative;
+            background: linear-gradient(190deg, rgba(11, 27, 49, 0.85) 0%, rgba(6, 16, 30, 0.95) 60%, rgba(9, 24, 43, 0.8) 100%);
+            border-radius: 46px;
+            padding: 50px 44px 46px;
+            display: flex;
+            flex-direction: column;
+            gap: 36px;
+            align-items: center;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            box-shadow: 0 48px 120px rgba(11, 27, 49, 0.6);
+        }
+
+        .product-showcase::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 10%, rgba(255, 177, 99, 0.25) 0%, rgba(6, 16, 30, 0) 55%);
+            pointer-events: none;
+        }
+
+        .product-showcase::after {
+            content: "";
+            position: absolute;
+            inset: -30% -40% auto -40%;
+            height: 65%;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.06) 0%, rgba(6, 16, 30, 0) 70%);
+            pointer-events: none;
+        }
+
+        .product-tag {
+            position: absolute;
+            top: 40px;
+            right: 46px;
+            padding: 14px 12px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 1.2rem;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            color: rgba(255, 227, 207, 0.85);
+        }
+
+        .product-photo {
+            position: relative;
+            width: 100%;
+            min-height: 540px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .product-photo img {
+            position: relative;
+            z-index: 2;
+            height: 640px;
+            object-fit: contain;
+            filter: drop-shadow(0 35px 90px rgba(0, 0, 0, 0.55));
+        }
+
+        .product-shadow {
+            position: absolute;
+            bottom: 24px;
+            width: 70%;
+            height: 160px;
+            background: radial-gradient(circle at center, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 70%);
+            filter: blur(12px);
+            z-index: 1;
+            opacity: 0.55;
+        }
+
+        .product-pill-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .product-pill {
+            padding: 10px 20px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.12);
+            color: #ffe3cf;
+            font-size: 1.3rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .product-note {
+            font-size: 1.6rem;
+            color: rgba(255, 255, 255, 0.66);
+            text-align: center;
+            line-height: 1.5;
+            max-width: 80%;
+        }
+
+        .cta-section {
+            margin-top: 10px;
+            padding: 38px 42px;
+            border-radius: 36px 36px 0 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(11, 27, 49, 0.55) 100%);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 48px;
+        }
+
+        .cta-copy {
+            max-width: 60%;
+        }
+
+        .cta-copy strong {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.28em;
+            color: #ffe3cf;
+        }
+
+        .cta-copy p {
+            font-size: 1.8rem;
+            color: rgba(255, 255, 255, 0.72);
+            margin-top: 12px;
+            line-height: 1.55;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 16px;
+            padding: 18px 34px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #ffe3cf 0%, #ffb87f 100%);
+            color: #0b1b31;
+            font-size: 1.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            box-shadow: 0 18px 45px rgba(255, 153, 92, 0.5);
+        }
+
+        .cta-button i {
+            width: 26px;
+            height: 26px;
+            color: #0b1b31;
+        }
+
+        .cta-button span {
+            display: inline-block;
+            margin-top: 1px;
+        }
+
+        @media (max-width: 1100px) {
+            .poster-content {
+                padding: 70px 48px 0;
+                gap: 56px;
+            }
+
+            .hero-section {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .badge-stack {
+                align-items: flex-start;
+            }
+
+            .product-showcase {
+                padding: 44px 36px;
+            }
+
+            .product-photo {
+                min-height: 460px;
+            }
+
+            .product-photo img {
+                height: 520px;
+            }
+
+            .cta-section {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 32px;
+            }
+
+            .cta-copy {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 720px) {
+            .poster-content {
+                padding: 56px 32px 0;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-copy h1 {
+                font-size: 4.6rem;
+            }
+
+            .hero-copy h1 span {
+                font-size: 3.9rem;
+            }
+
+            .product-photo img {
+                height: 380px;
+            }
+
+            .product-pill {
+                letter-spacing: 0.12em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="poster-container">
+        <div class="instagram-post speed-oxford-story">
+            <div class="poster-content">
+                <div class="top-bar">
+                    <div class="brand-stack">
+                        <img src="../assets/logos/kant-logo.png" alt="Kant Logo">
+                        <span class="strapline">Delta Plus Resmi Distribütörü</span>
+                    </div>
+                    <div class="badge-stack">
+                        <span class="mod-badge">5+1 Modüler Sistem</span>
+                        <span class="price-chip">₺3.484,03</span>
+                    </div>
+                </div>
+
+                <div class="hero-section">
+                    <div class="hero-copy">
+                        <h1>Delta Plus SPEED <span>Oxford 5+1 Parka</span></h1>
+                        <p>100% PU kaplamalı Oxford kumaş, polar astarlı iç ceket ve geri çekilebilir başlık ile her vardiyada su geçirmez koruma ve sıcaklık sağlar.</p>
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <i data-lucide="layers"></i>
+                                <div class="feature-card-text">
+                                    <strong>5'i 1 Arada</strong>
+                                    <span>Çıkarılabilir iç ceket & kollar</span>
+                                </div>
+                            </div>
+                            <div class="feature-card">
+                                <i data-lucide="droplets"></i>
+                                <div class="feature-card-text">
+                                    <strong>Su Geçirmez</strong>
+                                    <span>Kaynaklı dikiş & PU kaplama</span>
+                                </div>
+                            </div>
+                            <div class="feature-card">
+                                <i data-lucide="sun"></i>
+                                <div class="feature-card-text">
+                                    <strong>Yüksek Görünürlük</strong>
+                                    <span>Reflektif bantlı hi-vis gövde</span>
+                                </div>
+                            </div>
+                            <div class="feature-card">
+                                <i data-lucide="thermometer"></i>
+                                <div class="feature-card-text">
+                                    <strong>Polar Konfor</strong>
+                                    <span>Sökülebilir polar astar</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-chip">PU Kaplamalı Oxford Kumaş</span>
+                            <span class="spec-chip">Polar Yaka & Başlık</span>
+                            <span class="spec-chip">S-5XL Beden Seçenekleri</span>
+                        </div>
+                    </div>
+                    <div class="product-showcase">
+                        <span class="product-tag">Storm Guard</span>
+                        <div class="product-photo">
+                            <span class="product-shadow"></span>
+                            <img src="../assets/products/parka-turuncu.png" alt="Delta Plus SPEED Oxford Parka">
+                        </div>
+                        <div class="product-pill-row">
+                            <span class="product-pill">Reflektif Bant</span>
+                            <span class="product-pill">PU Kaplama</span>
+                            <span class="product-pill">Polar Astar</span>
+                        </div>
+                        <div class="product-note">İç ceket tek başına kullanılabilir</div>
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <div class="cta-copy">
+                        <strong>Şantiyeden depoya tek mont</strong>
+                        <p>Stoklar sınırlı, modüler parka setinizi hemen sipariş edin.</p>
+                    </div>
+                    <a class="cta-button" href="https://kantisguvenligi.com/products/delta-plus-speed-oxford-kumas-5-1-parka-turuncu?_pos=1&_sid=d62772b4c&_ss=r" target="_blank" rel="noopener">
+                        <span>Ürünü İncele</span>
+                        <i data-lucide="arrow-up-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button onclick="downloadPoster()" class="download-btn">Download PNG</button>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/download.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

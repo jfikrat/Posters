@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delta Plus SPEED Parka - Story v1</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/poster.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .speed-story-v1 {
+            background: linear-gradient(180deg, #FF6B35 0%, #F7931E 60%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Geometrik şekiller */
+        .geo-shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .geo-1 {
+            width: 600px;
+            height: 600px;
+            top: 100px;
+            right: -150px;
+            transform: rotate(45deg);
+        }
+
+        .geo-2 {
+            width: 400px;
+            height: 400px;
+            bottom: 300px;
+            left: -100px;
+            transform: rotate(-30deg);
+        }
+
+        /* Header section */
+        .header-section {
+            position: relative;
+            z-index: 10;
+            padding: 60px 60px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .kant-logo {
+            width: 220px;
+            filter: brightness(0) invert(1) drop-shadow(0 3px 10px rgba(0,0,0,0.2));
+        }
+
+        .discount-badge {
+            background: #dc2626;
+            color: white;
+            padding: 16px 30px;
+            border-radius: 999px;
+            font-size: 2.5rem;
+            font-weight: 900;
+            box-shadow: 0 8px 30px rgba(220,38,38,0.5);
+        }
+
+        /* Title section */
+        .title-section {
+            position: relative;
+            z-index: 10;
+            padding: 0 60px 50px;
+        }
+
+        .brand-name {
+            font-size: 5.5rem;
+            font-weight: 900;
+            color: white;
+            line-height: 0.9;
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 15px rgba(0,0,0,0.3);
+            letter-spacing: -2px;
+        }
+
+        .product-name {
+            font-size: 6rem;
+            font-weight: 900;
+            color: #1a1a1a;
+            line-height: 0.9;
+            text-shadow:
+                -4px -4px 0 white,
+                4px -4px 0 white,
+                -4px 4px 0 white,
+                4px 4px 0 white;
+            letter-spacing: -3px;
+        }
+
+        /* Product card */
+        .product-card {
+            position: relative;
+            margin: 0 40px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 40px;
+            padding: 50px;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.3);
+            z-index: 10;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 700px;
+            object-fit: contain;
+            filter: drop-shadow(0 30px 60px rgba(0,0,0,0.25));
+        }
+
+        /* Feature badges */
+        .feature-badges {
+            position: absolute;
+            z-index: 20;
+        }
+
+        .badge-tl {
+            left: -20px;
+            top: 100px;
+        }
+
+        .badge-tr {
+            right: -20px;
+            top: 200px;
+        }
+
+        .badge-bl {
+            left: -20px;
+            bottom: 150px;
+        }
+
+        .badge-br {
+            right: -20px;
+            bottom: 250px;
+        }
+
+        .feature-badge {
+            background: white;
+            padding: 14px 24px;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
+        .badge-icon {
+            width: 24px;
+            height: 24px;
+            color: #FF6B35;
+            stroke-width: 2.5px;
+        }
+
+        /* Price section */
+        .price-section {
+            position: relative;
+            background: linear-gradient(135deg, #2c3e50 0%, #1a1a1a 100%);
+            padding: 50px 60px;
+            z-index: 10;
+        }
+
+        .price-label {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.7);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+        }
+
+        .price-row {
+            display: flex;
+            align-items: baseline;
+            gap: 20px;
+        }
+
+        .price-old {
+            font-size: 2rem;
+            color: rgba(255,255,255,0.5);
+            text-decoration: line-through;
+        }
+
+        .price-new {
+            font-size: 5rem;
+            font-weight: 900;
+            color: #FF6B35;
+            text-shadow: 2px 2px 10px rgba(255,107,53,0.3);
+        }
+
+        /* CTA section */
+        .cta-section {
+            position: relative;
+            background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+            padding: 50px 60px;
+            text-align: center;
+            z-index: 10;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #FF6B35;
+            padding: 22px 60px;
+            border-radius: 999px;
+            font-size: 2rem;
+            font-weight: 900;
+            text-decoration: none;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+            letter-spacing: 1px;
+        }
+
+        .cta-arrow {
+            font-size: 2.2rem;
+            margin-left: 10px;
+        }
+
+        /* Footer section */
+        .footer-section {
+            position: relative;
+            background: #f1f3f4;
+            padding: 40px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .sizes {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .sizes-label {
+            font-size: 1rem;
+            color: #6b7280;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .sizes-list {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            letter-spacing: 2px;
+        }
+
+        .footer-logo {
+            width: 160px;
+            filter: brightness(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="poster-container">
+        <div class="instagram-post speed-story-v1">
+            <!-- Geometrik şekiller -->
+            <div class="geo-shape geo-1"></div>
+            <div class="geo-shape geo-2"></div>
+
+            <!-- Header -->
+            <div class="header-section">
+                <img src="../assets/logos/kant-logo.png" alt="Kant İş Güvenliği" class="kant-logo"
+                     onerror="this.style.display='none'">
+                <div class="discount-badge">-30%</div>
+            </div>
+
+            <!-- Title -->
+            <div class="title-section">
+                <h1 class="brand-name">DELTA<br>PLUS</h1>
+                <h2 class="product-name">SPEED</h2>
+            </div>
+
+            <!-- Product card -->
+            <div class="product-card">
+                <img src="../assets/products/parka-turuncu.png" alt="Delta Plus SPEED" class="product-image"
+                     onerror="this.style.display='none'">
+
+                <!-- Feature badges -->
+                <div class="feature-badges badge-tl">
+                    <div class="feature-badge">
+                        <i data-lucide="layers" class="badge-icon"></i>
+                        <span>5+1 Sistem</span>
+                    </div>
+                </div>
+
+                <div class="feature-badges badge-tr">
+                    <div class="feature-badge">
+                        <i data-lucide="droplets" class="badge-icon"></i>
+                        <span>Su Geçirmez</span>
+                    </div>
+                </div>
+
+                <div class="feature-badges badge-bl">
+                    <div class="feature-badge">
+                        <i data-lucide="sparkles" class="badge-icon"></i>
+                        <span>Reflektif</span>
+                    </div>
+                </div>
+
+                <div class="feature-badges badge-br">
+                    <div class="feature-badge">
+                        <i data-lucide="package" class="badge-icon"></i>
+                        <span>Çok Cepli</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Price section -->
+            <div class="price-section">
+                <div class="price-label">Özel Fiyat</div>
+                <div class="price-row">
+                    <span class="price-old">4.985,87₺</span>
+                    <span class="price-new">3.501₺</span>
+                </div>
+            </div>
+
+            <!-- CTA section -->
+            <div class="cta-section">
+                <div class="cta-button">
+                    HEMEN AL <span class="cta-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer-section">
+                <div class="sizes">
+                    <div class="sizes-label">Bedenler:</div>
+                    <div class="sizes-list">S • M • L • XL • XXL • 3XL</div>
+                </div>
+                <img src="../assets/logos/kant-logo.png" alt="Kanti" class="footer-logo"
+                     onerror="this.style.display='none'">
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button onclick="downloadPosterPNG()" class="download-btn">Download PNG</button>
+        <button onclick="downloadPosterJPEG()" class="download-btn">Download JPEG</button>
+        <button onclick="copyPosterToClipboard()" class="download-btn">Copy to Clipboard</button>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/download.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
